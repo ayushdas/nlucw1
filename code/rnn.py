@@ -194,10 +194,11 @@ class RNN(object):
 					break
 				deltaV_sum += np.outer(delta_inbptt[t-tau], make_onehot(x[t-tau], self.vocab_size))
 				deltaU_sum += np.outer(delta_inbptt[t-tau], s[t-tau-1])
-			##########################
-		self.deltaW += deltaW_sum
-		self.deltaV += deltaV_sum
+			##########################		
 		self.deltaU += deltaU_sum
+		self.deltaV += deltaV_sum
+		self.deltaW += deltaW_sum
+		
 
 
 	def acc_deltas_bptt_np(self, x, d, y, s, steps):
