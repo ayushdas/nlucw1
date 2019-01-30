@@ -187,10 +187,10 @@ class RNN(object):
 			for tau in range(steps+1):
 				if ((t-tau) < 0):
 					break
-				if (tau == 0):
-					delta_inbptt[t-tau] = np.dot(self.W.T, delta_out) * gradbptt_in[t]
+				if (tau != 0):
+					delta_inbptt[t-tau] = np.dot(self.U.T, delta_inbptt[t-tau+1]) * gradbptt_in[t-tau]					
 				else:
-					delta_inbptt[t-tau] = np.dot(self.U.T, delta_inbptt[t-tau+1]) * gradbptt_in[t-tau]
+					delta_inbptt[t-tau] = np.dot(self.W.T, delta_out) * gradbptt_in[t]
 				deltaV_sum += np.outer(delta_inbptt[t-tau], make_onehot(x[t-tau], self.vocab_size))
 				deltaU_sum += np.outer(delta_inbptt[t-tau], s[t-tau-1])
 			##########################		
