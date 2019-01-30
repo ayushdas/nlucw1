@@ -2,7 +2,6 @@
 import sys
 import time
 import numpy as np
-
 from utils import *
 from rnnmath import *
 from sys import stdout
@@ -186,12 +185,12 @@ class RNN(object):
 			deltaW_sum += np.outer(delta_out, s[t])
 			delta_inbptt = np.zeros((len(x), self.hidden_dims))
 			for tau in range(steps+1):
-				if ((t-tau)>0):
-					delta_inbptt[t-tau] = np.dot(self.U.T, delta_inbptt[t-tau+1]) * gradbptt_in[t-tau]
-				elif (tau==0):
+				if ((t-tau) < 0):
+					break
+				if (tau == 0):
 					delta_inbptt[t-tau] = np.dot(self.W.T, delta_out) * gradbptt_in[t]
 				else:
-					break
+					delta_inbptt[t-tau] = np.dot(self.U.T, delta_inbptt[t-tau+1]) * gradbptt_in[t-tau]
 				deltaV_sum += np.outer(delta_inbptt[t-tau], make_onehot(x[t-tau], self.vocab_size))
 				deltaU_sum += np.outer(delta_inbptt[t-tau], s[t-tau-1])
 			##########################		
