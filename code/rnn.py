@@ -626,8 +626,10 @@ class RNN(object):
 
 if __name__ == "__main__":
 
-	mode = sys.argv[1].lower()
-	data_folder = sys.argv[2]
+	# mode = sys.argv[1].lower()
+	mode = "train-lm"
+	data_folder = "../data"
+	# data_folder = sys.argv[2]
 	np.random.seed(2018)
 	
 	if mode == "train-lm":
@@ -639,9 +641,12 @@ if __name__ == "__main__":
 		dev_size = 1000
 		vocab_size = 2000
 		
-		hdim = int(sys.argv[3])
-		lookback = int(sys.argv[4])
-		lr = float(sys.argv[5])
+		# hdim = int(sys.argv[3])
+		hdim = 25
+		lr = 0.5
+		lookback = 0
+		# lookback = int(sys.argv[4])
+		# lr = float(sys.argv[5])
 		
 		# get the data set vocabulary
 		vocab = pd.read_table(data_folder + "/vocab.wiki.txt", header=None, sep="\s+", index_col=0, names=['count', 'freq'], )
@@ -669,20 +674,23 @@ if __name__ == "__main__":
 		# q = best unigram frequency from omitted vocab
 		# this is the best expected loss out of that set
 		q = vocab.freq[vocab_size] / sum(vocab.freq[vocab_size:])
-		
 		##########################
-		train_RNN = RNN(vocab_size, hdim, vocab_size)
-		run_loss = train_RNN.train(X=X_train, D=D_train, X_dev=X_dev, D_dev=D_dev, epochs=15, learning_rate=0.5)
+		lrs = [0.5,0.1,0.05]
+		hdims = [25,50]
+		loopbacks = [0,2,5]
+		epoch_nums = 10
+		for lr in lrs:
+			for loopback in loopbacks:
+				for hdim in hdims:
+					print('#'*10)
+					print('Learning Rate: ',lr,' Number of Loop Back Steps: ',loopback,' Number of Hidden Units: ',hdim)
+					train_RNN = RNN(vocab_size, hdim, vocab_size)
+					run_loss = train_RNN.train(X=X_train, D=D_train, X_dev=X_dev, D_dev=D_dev, epochs=epoch_nums, learning_rate=lr, back_steps=loopback)					
+					print("Unadjusted: %.03f" % np.exp(run_loss))
+					adjusted_loss = adjust_loss(run_loss, fraction_lost, q, mode='basic')
+					print("Adjusted for missing vocab: %.03f" % np.exp(adjusted_loss))
+					print('#'*10)	
 		##########################
-		
-		run_loss = -1
-		adjusted_loss = -1
-
-		print("Unadjusted: %.03f" % np.exp(run_loss))
-		print("Adjusted for missing vocab: %.03f" % np.exp(adjusted_loss))
-
-
-
 	if mode == "train-np":
 		'''
 		starter code for parameter estimation.
