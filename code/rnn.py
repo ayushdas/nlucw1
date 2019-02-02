@@ -150,10 +150,24 @@ class RNN(object):
 		
 		no return values
 		'''
-		
+		y,s = self.predict(x)
+		deltaU_sum = np.zeros((self.hidden_dims, self.hidden_dims))
+		deltaV_sum = np.zeros((self.hidden_dims, self.vocab_size))
+		deltaW_sum = np.zeros((self.vocab_size, self.hidden_dims))	
 		##########################
-		# --- your code here --- #
+		delta_out = (make_onehot(d[0], self.vocab_size) - y[-1]) * 1
+		deltaW_sum = np.outer(delta_out, s[-2])
+		grad_in = np.array([t * (np.ones(len(t)) - t) for t in s])		
+		delta_in = (np.dot(self.W.T, delta_out)) * grad_in[-2]
+		if (len(s)<=2):
+			deltaU_sum = np.outer(delta_in, s[-2])			
+		else:
+			deltaU_sum = np.outer(delta_in, s[-3])
+		deltaV_sum = np.outer(delta_in, make_onehot(x[-1], self.vocab_size))	
 		##########################
+		self.deltaU += deltaU_sum
+		self.deltaV += deltaV_sum
+		self.deltaW += deltaW_sum
 		
 		
 	def acc_deltas_bptt(self, x, d, y, s, steps):
@@ -220,8 +234,31 @@ class RNN(object):
 		'''
 		
 		##########################
-		# --- your code here --- #
+		y,s = self.predict(x)	
+		deltaU_sum = np.zeros((self.hidden_dims, self.hidden_dims))
+		deltaV_sum = np.zeros((self.hidden_dims, self.vocab_size))
+		deltaW_sum = np.zeros((self.vocab_size, self.hidden_dims))
+		gradbptt_in = np.array([t * (np.ones(len(t)) - t) for t in s])
+		delta_inbptt = np.zeros((len(x), self.hidden_dims))
+		t = len(x) - 1 
+		delta_out = (make_onehot(d[-1], self.out_vocab_size) - y[-1]) * 1
+		deltaW_sum = np.outer(delta_out, s[-2])	
+		for tau in range(steps+1):
+			if ((t-tau) < 0):
+				break
+			if (tau != 0):
+				delta_inbptt[t-tau] = np.dot(self.U.T, delta_inbptt[t-tau+1]) * gradbptt_in[t-tau]					
+			else:
+				delta_inbptt[t-tau] = np.dot(self.W.T, delta_out) * gradbptt_in[t]
+			deltaV_sum += np.outer(delta_inbptt[t-tau], make_onehot(x[t-tau], self.vocab_size))
+			deltaU_sum += np.outer(delta_inbptt[t-tau], s[t-tau-1])
+		# 	##########################		
+		self.deltaU += deltaU_sum
+		self.deltaV += deltaV_sum
+		self.deltaW += deltaW_sum		
 		##########################
+
+		
 
 
 	def compute_loss(self, x, d):
@@ -258,11 +295,10 @@ class RNN(object):
 		'''
 		
 		loss = 0.
-		
+		y, s = self.predict(x)
+		##########################		
+		loss = -1 * np.dot(make_onehot(d[0], self.out_vocab_size), np.log(y[-1]))
 		##########################
-		# --- your code here --- #
-		##########################
-		
 		return loss
 
 
@@ -275,15 +311,15 @@ class RNN(object):
 		d		a word class (plural/singular), as index, e.g.: [0] or [1]
 		
 		return 1 if argmax(y[t]) == d[0], 0 otherwise
-		'''
-		
-
+		'''		
 		##########################
-		# --- your code here --- #
+		y, s = self.predict(x)
+		y_predicted = np.argmax(y[-1])
+		if (y_predicted == d[0]):
+			return 1
+		else:
+			return 0
 		##########################
-		
-		return 0
-
 
 	def compare_num_pred(self, x, d):
 		'''
@@ -297,10 +333,16 @@ class RNN(object):
 		'''
 		
 		##########################
-		# --- your code here --- #
+		y, s = self.predict(x)
+		p_d_0 = y[-1][d[0]]
+		p_d_1 = y[-1][d[1]]
+		if (p_d_0 > p_d_1):
+			return 1
+		else:
+			return 0
 		##########################
 		
-		return 0
+		
 
 
 	def compute_acc_lmnp(self, X_dev, D_dev):
@@ -621,13 +663,13 @@ class RNN(object):
 		print("setting U, V, W to matrices from best epoch")
 		self.U, self.V, self.W = bestU, bestV, bestW
 		
-		return best_loss
+		return best_loss, best_acc
 
 
 if __name__ == "__main__":
 
 	# mode = sys.argv[1].lower()
-	mode = "train-lm"
+	mode = "train-np"
 	data_folder = "../data"
 	# data_folder = sys.argv[2]
 	np.random.seed(2018)
@@ -637,16 +679,29 @@ if __name__ == "__main__":
 		code for training language model.
 		change this to different values, or use it to get you started with your own testing class
 		'''
-		train_size = 1000
-		dev_size = 1000
-		vocab_size = 2000
-		
+		# train_size = 1000
+		# dev_size = 1000
+		# vocab_size = 2000
+
+		# Params for Q2 (b)
+		# vocab_size = 2000
+		# train_size = 25000
+		# dev_size = 1000
+
 		# hdim = int(sys.argv[3])
-		hdim = 25
-		lr = 0.5
-		lookback = 0
+		# hdim = 25
+		# lr = 0.5
+		# lookback = 0
 		# lookback = int(sys.argv[4])
 		# lr = float(sys.argv[5])
+
+		# Params for Q2 (b)
+		vocab_size = 2000
+		train_size = 25000
+		dev_size = 1000
+		lr = 0.5
+		lookback = 5
+		hdim = 25
 		
 		# get the data set vocabulary
 		vocab = pd.read_table(data_folder + "/vocab.wiki.txt", header=None, sep="\s+", index_col=0, names=['count', 'freq'], )
@@ -674,23 +729,49 @@ if __name__ == "__main__":
 		# q = best unigram frequency from omitted vocab
 		# this is the best expected loss out of that set
 		q = vocab.freq[vocab_size] / sum(vocab.freq[vocab_size:])
-		##########################
-		lrs = [0.5,0.1,0.05]
+		########################## Loop for Q2a ##########################
+		'''lrs = [0.5,0.1,0.05]
 		hdims = [25,50]
 		loopbacks = [0,2,5]
 		epoch_nums = 10
 		for lr in lrs:
-			for loopback in loopbacks:
+			for lookback in loopbacks:
 				for hdim in hdims:
 					print('#'*10)
-					print('Learning Rate: ',lr,' Number of Loop Back Steps: ',loopback,' Number of Hidden Units: ',hdim)
+					print('Learning Rate: ',lr,' Number of Loop Back Steps: ',lookback,' Number of Hidden Units: ',hdim)
 					train_RNN = RNN(vocab_size, hdim, vocab_size)
-					run_loss = train_RNN.train(X=X_train, D=D_train, X_dev=X_dev, D_dev=D_dev, epochs=epoch_nums, learning_rate=lr, back_steps=loopback)					
+					run_loss = train_RNN.train(X=X_train, D=D_train, X_dev=X_dev, D_dev=D_dev, epochs=epoch_nums, learning_rate=lr, back_steps=lookback)					
 					print("Unadjusted: %.03f" % np.exp(run_loss))
 					adjusted_loss = adjust_loss(run_loss, fraction_lost, q, mode='basic')
 					print("Adjusted for missing vocab: %.03f" % np.exp(adjusted_loss))
-					print('#'*10)	
+					print('#'*10)'''	
 		##########################
+		########################## Training with best parameters Q2b ##########################
+		# vocab_size = 2000
+		# train_size = 25000
+		# dev_size = 1000
+		# lr = 0.5
+		# lookback = 5
+		# hdim = 25
+		epoch_nums = 10
+		print('#'*10)
+		print('Learning Rate: ',lr,' Number of Loop Back Steps: ',lookback,' Number of Hidden Units: ',hdim)
+		train_RNN = RNN(vocab_size, hdim, vocab_size)
+		run_loss = train_RNN.train(X=X_train, D=D_train, X_dev=X_dev, D_dev=D_dev, epochs=epoch_nums, learning_rate=lr, back_steps=lookback)					
+		print("Unadjusted: %.03f" % np.exp(run_loss))
+		adjusted_loss = adjust_loss(run_loss, fraction_lost, q, mode='basic')
+		print("Adjusted for missing vocab in basic mode: %.03f" % np.exp(adjusted_loss))
+		adjusted_loss = adjust_loss(run_loss, fraction_lost, q, mode='non-basic')
+		print("Adjusted for missing vocab in non-basic mode: %.03f" % np.exp(adjusted_loss))		
+		print('#'*10)
+		print(' U MATRIX: ',train_RNN.U)
+		print(' V MATRIX: ',train_RNN.V)
+		print(' W MATRIX: ',train_RNN.W)
+		np.save('rnn.U.npy',train_RNN.U)
+		np.save('rnn.V.npy', train_RNN.V)
+		np.save('rnn.W.npy', train_RNN.W)
+
+
 	if mode == "train-np":
 		'''
 		starter code for parameter estimation.
@@ -700,9 +781,12 @@ if __name__ == "__main__":
 		dev_size = 1000
 		vocab_size = 2000
 		
-		hdim = int(sys.argv[3])
-		lookback = int(sys.argv[4])
-		lr = float(sys.argv[5])
+		# hdim = int(sys.argv[3])
+		hdim = 25
+		# lookback = int(sys.argv[4])
+		lookback = 0
+		# lr = float(sys.argv[5])
+		lr = 0.5
 		
 		# get the data set vocabulary
 		vocab = pd.read_table(data_folder + "/vocab.wiki.txt", header=None, sep="\s+", index_col=0, names=['count', 'freq'], )
@@ -731,12 +815,12 @@ if __name__ == "__main__":
 
 
 		##########################
-		# --- your code here --- #
+		epoch_nums = 3
+		train_RNN = RNN(vocab_size, hdim, vocab_size)
+		run_loss, acc = train_RNN.train_np(X=X_train, D=D_train, X_dev=X_dev, D_dev=D_dev, epochs=epoch_nums, learning_rate=lr, back_steps=lookback)					
 		##########################
-
-		acc = 0.
-		
 		print("Accuracy: %.03f" % acc)
+		print("Loss: %.03f" % run_loss)
 
 	
 	if mode == "predict-lm":
