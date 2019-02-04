@@ -1,0 +1,4 @@
+Index:  15  Max Accuracy:  0.718
+Index:  15  Minimum Loss:  1.766
+Learning Rate:  0.5  Number of Look Back Steps:  5  Number of Hidden Units:  50  Annealing:  0  Epochs:  20
+

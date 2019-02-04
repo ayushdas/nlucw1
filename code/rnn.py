@@ -4,6 +4,7 @@ import time
 import numpy as np
 from utils import *
 from rnnmath import *
+from rnnmath import multinomial_sample as mns
 from sys import stdout
 
 
@@ -380,6 +381,26 @@ class RNN(object):
 		##########################
 		
 		return mean_loss
+
+	def generate_sequence(self, start, maxLength):
+		# sequence = [start]
+		# x = [start]
+		x = start[:]
+		sequence = start[:]
+		loss = 0.
+		while True:
+		# predict next word from current sequene x
+			y,s = self.predict(x)
+		# generate next word by sampling the word  according to the last element of y
+			index_word = mns(y[-1])
+			# word_index = np.argmax(y[-1])
+			x.append(index_word)
+			sequence.append(index_word)
+			loss += -1 * np.log(y[-1][index_word])
+			if len(sequence)-len(start) >= maxLength: #or index_word == end: 
+				break
+		print ('The loss is :',loss)
+		return sequence
 	
 		
 	def train(self, X, D, X_dev, D_dev, epochs=10, learning_rate=0.5, anneal=5, back_steps=0, batch_size=100, min_change=0.0001, log=True):
@@ -516,10 +537,8 @@ class RNN(object):
 		print("best observed loss was {0}, at epoch {1}".format(best_loss, (best_epoch+1)))
 		
 		print("setting U, V, W to matrices from best epoch")
-		self.U, self.V, self.W = bestU, bestV, bestW
-		
+		self.U, self.V, self.W = bestU, bestV, bestW		
 		return best_loss
-
 
 	def train_np(self, X, D, X_dev, D_dev, epochs=10, learning_rate=0.5, anneal=5, back_steps=0, batch_size=100, min_change=0.0001, log=True):
 		'''
@@ -669,7 +688,9 @@ class RNN(object):
 if __name__ == "__main__":
 
 	# mode = sys.argv[1].lower()
-	mode = "train-np"
+	# mode = "train-np"
+	mode = "generate_from_lm"
+	# mode = 'predict-lm'
 	data_folder = "../data"
 	# data_folder = sys.argv[2]
 	np.random.seed(2018)
@@ -753,7 +774,7 @@ if __name__ == "__main__":
 		# lr = 0.5
 		# lookback = 5
 		# hdim = 25
-		epoch_nums = 10
+		''' epoch_nums = 10
 		print('#'*10)
 		print('Learning Rate: ',lr,' Number of Loop Back Steps: ',lookback,' Number of Hidden Units: ',hdim)
 		train_RNN = RNN(vocab_size, hdim, vocab_size)
@@ -769,7 +790,27 @@ if __name__ == "__main__":
 		print(' W MATRIX: ',train_RNN.W)
 		np.save('rnn.U.npy',train_RNN.U)
 		np.save('rnn.V.npy', train_RNN.V)
-		np.save('rnn.W.npy', train_RNN.W)
+		np.save('rnn.W.npy', train_RNN.W) '''
+
+		########################## Loop for Q5a ##########################
+		'''lrs = [0.5,0.1,0.05]
+		hdims = [25,50,75] 
+		anneals = [0,5] 
+		epochs = [10,20] 
+		lookbacks = [0,2,5]
+		for lr in lrs:
+			for lookback in lookbacks:
+				for hdim in hdims:
+					for epoch_nums in epochs:
+					print('#'*10)
+					print('Learning Rate: ',lr,' Number of Loop Back Steps: ',lookback,' Number of Hidden Units: ',hdim)
+					train_RNN = RNN(vocab_size, hdim, vocab_size)
+					run_loss = train_RNN.train(X=X_train, D=D_train, X_dev=X_dev, D_dev=D_dev, epochs=epoch_nums, learning_rate=lr, back_steps=lookback)					
+					print("Unadjusted: %.03f" % np.exp(run_loss))
+					adjusted_loss = adjust_loss(run_loss, fraction_lost, q, mode='basic')
+					print("Adjusted for missing vocab: %.03f" % np.exp(adjusted_loss))
+					print('#'*10)'''	
+		##########################
 
 
 	if mode == "train-np":
@@ -782,11 +823,11 @@ if __name__ == "__main__":
 		vocab_size = 2000
 		
 		# hdim = int(sys.argv[3])
-		hdim = 25
+		# hdim = 25
 		# lookback = int(sys.argv[4])
-		lookback = 0
+		# lookback = 1
 		# lr = float(sys.argv[5])
-		lr = 0.5
+		# lr = 0.5
 		
 		# get the data set vocabulary
 		vocab = pd.read_table(data_folder + "/vocab.wiki.txt", header=None, sep="\s+", index_col=0, names=['count', 'freq'], )
@@ -814,20 +855,67 @@ if __name__ == "__main__":
 		D_dev = D_dev[:dev_size]
 
 
+		##########################		
+		# epoch_nums = 20
+		# train_RNN = RNN(vocab_size, hdim, vocab_size)
+		# run_loss, acc = train_RNN.train_np(X=X_train, D=D_train, X_dev=X_dev, D_dev=D_dev, epochs=epoch_nums, learning_rate=lr, back_steps=lookback)					
 		##########################
-		epoch_nums = 3
-		train_RNN = RNN(vocab_size, hdim, vocab_size)
-		run_loss, acc = train_RNN.train_np(X=X_train, D=D_train, X_dev=X_dev, D_dev=D_dev, epochs=epoch_nums, learning_rate=lr, back_steps=lookback)					
-		##########################
-		print("Accuracy: %.03f" % acc)
-		print("Loss: %.03f" % run_loss)
+		# print("Accuracy: %.03f" % acc)
+		# print("Loss: %.03f" % run_loss)
+
+		############# Loop for Q3a #############
+		'''q = vocab.freq[vocab_size] / sum(vocab.freq[vocab_size:])
+		lrs = [0.5,0.1,0.05]  
+		hdims = [25,50,75] 
+		anneals = [0,5] 
+		epochs = [10,20] 
+		loopbacks = [0,2,5] 
+		for lr in lrs:
+			for anneal_factor in anneals:
+				for lookback in loopbacks:
+					for hdim in hdims:
+						for epoch_nums in epochs:				
+							print('#'*10)
+							print('Learning Rate: ',lr,' Number of Loop Back Steps: ',lookback,' Number of Hidden Units: ',hdim, ' Annealing: ',anneal_factor, ' Epochs: ',epoch_nums)
+							train_RNN = RNN(vocab_size, hdim, vocab_size)
+							run_loss, acc = train_RNN.train_np(X=X_train, D=D_train, X_dev=X_dev, D_dev=D_dev, epochs=epoch_nums, learning_rate=lr, anneal=anneal_factor,back_steps=lookback)					
+							print("Accuracy: %.03f" % acc)
+							print("Unadjusted Loss: %.03f" % np.exp(run_loss))
+							adjusted_loss = adjust_loss(run_loss, fraction_lost, q, mode='basic')
+							print("Adjusted loss for missing vocab in basic mode: %.03f" % np.exp(adjusted_loss))
+							adjusted_loss = adjust_loss(run_loss, fraction_lost, q, mode='non-basic')
+							print("Adjusted loss for missing vocab in non-basic mode: %.03f" % np.exp(adjusted_loss))
+							print('#'*10)'''
+		#########################
+
+		######################### Loop for Q3b #########################
+		''' Optimal params -> Learning Rate:  0.5  Number of Look Back Steps:  5  Number of Hidden Units:  50  Annealing:  0  Epochs:  20'''
+		# q = vocab.freq[vocab_size] / sum(vocab.freq[vocab_size:])
+		# lr = 0.5
+		# anneal_factor = 0
+		# lookback = 5
+		# hdim = 50
+		# epoch_nums = 20			
+		# print('#'*10)
+		# print('Learning Rate: ',lr,' Number of Loop Back Steps: ',lookback,' Number of Hidden Units: ',hdim, ' Annealing: ',anneal_factor, ' Epochs: ',epoch_nums)
+		# train_RNN = RNN(vocab_size, hdim, vocab_size)
+		# run_loss, acc = train_RNN.train_np(X=X_train, D=D_train, X_dev=X_dev, D_dev=D_dev, epochs=epoch_nums, learning_rate=lr, anneal=anneal_factor,back_steps=lookback)					
+		# print("Accuracy: %.03f" % acc)
+		# print("Unadjusted Loss: %.03f" % np.exp(run_loss))
+		# adjusted_loss = adjust_loss(run_loss, fraction_lost, q, mode='basic')
+		# print("Adjusted loss for missing vocab in basic mode: %.03f" % np.exp(adjusted_loss))
+		# adjusted_loss = adjust_loss(run_loss, fraction_lost, q, mode='non-basic')
+		# print("Adjusted loss for missing vocab in non-basic mode: %.03f" % np.exp(adjusted_loss))
+		# print('#'*10)
+		#########################							
 
 	
 	if mode == "predict-lm":
 		
 		data_folder = sys.argv[2]
+		# data_folder = "../data"
 		rnn_folder = sys.argv[3]
-
+		# rnn_folder = "../code"
 		# get saved RNN matrices and setup RNN
 		U,V,W = np.load(rnn_folder + "/rnn.U.npy"), np.load(rnn_folder + "/rnn.V.npy"), np.load(rnn_folder + "/rnn.W.npy")
 		vocab_size = len(V[0])
@@ -865,3 +953,73 @@ if __name__ == "__main__":
 		np_acc_test = r.compute_acc_lmnp(X_np_test, D_np_test)
 
 		print('Number prediction accuracy on test set:', np_acc_test)
+
+	if mode == "generate_from_lm":
+		data_folder = "../data"
+		vocab = pd.read_table(data_folder + "/vocab.wiki.txt", header=None, sep="\s+", index_col=0, names=['count', 'freq'], )
+		
+		rnn_folder = "../code"
+		U,V,W = np.load(rnn_folder + "/rnn.U.npy"), np.load(rnn_folder + "/rnn.V.npy"), np.load(rnn_folder + "/rnn.W.npy")
+		vocab_size = len(V[0])
+		hdim = len(U[0])
+		r = RNN(vocab_size, hdim, vocab_size)		
+		r.U = U
+		r.V = V
+		r.W = W
+		
+		
+		
+		num_to_word = dict(enumerate(vocab.index[:vocab_size]))
+		word_to_num = invert_dict(num_to_word)
+		
+		# calculate loss vocabulary words due to vocab_size
+		fraction_lost = fraq_loss(vocab, word_to_num, vocab_size)
+		print("Retained %d words from %d (%.02f%% of all tokens)\n" % (vocab_size, len(vocab), 100*(1-fraction_lost)))
+		print('Vocab Size: ',vocab_size) # 2000
+		print('Hdims: ',hdim) # 25
+		seq = r.generate_sequence([word_to_num['he'],word_to_num["does"],word_to_num['not'],word_to_num['have'],word_to_num['it'],word_to_num['in'],word_to_num['itself']],0)
+		print(list(num_to_word[i] for i in seq))
+		# print(loss)
+		
+		# docs = load_lm_dataset(data_folder + '/wiki-train.txt')
+		# S_train = docs_to_indices(docs, word_to_num, 1, 1)
+		# X_train, D_train = seqs_to_lmXY(S_train)
+
+		# Load the dev set (for tuning hyperparameters)
+		# docs = load_lm_dataset(data_folder + '/wiki-dev.txt')
+		# S_dev = docs_to_indices(docs, word_to_num, 1, 1)
+		# X_dev, D_dev = seqs_to_lmXY(S_dev)
+		
+		# X_train = X_train[:train_size]
+		# D_train = D_train[:train_size]
+		# X_dev = X_dev[:dev_size]
+		# D_dev = D_dev[:dev_size]
+
+		# q = best unigram frequency from omitted vocab
+		# this is the best expected loss out of that set
+		# q = vocab.freq[vocab_size] / sum(vocab.freq[vocab_size:])
+
+		
+
+
+
+		''' epoch_nums = 10
+		print('#'*10)
+		print('Learning Rate: ',lr,' Number of Loop Back Steps: ',lookback,' Number of Hidden Units: ',hdim)
+		train_RNN = RNN(vocab_size, hdim, vocab_size)
+		run_loss = train_RNN.train(X=X_train, D=D_train, X_dev=X_dev, D_dev=D_dev, epochs=epoch_nums, learning_rate=lr, back_steps=lookback)					
+		print("Unadjusted: %.03f" % np.exp(run_loss))
+		adjusted_loss = adjust_loss(run_loss, fraction_lost, q, mode='basic')
+		print("Adjusted for missing vocab in basic mode: %.03f" % np.exp(adjusted_loss))
+		adjusted_loss = adjust_loss(run_loss, fraction_lost, q, mode='non-basic')
+		print("Adjusted for missing vocab in non-basic mode: %.03f" % np.exp(adjusted_loss))		
+		print('#'*10)
+		print(' U MATRIX: ',train_RNN.U)
+		print(' V MATRIX: ',train_RNN.V)
+		print(' W MATRIX: ',train_RNN.W)
+		np.save('rnn.U.npy',train_RNN.U)
+		np.save('rnn.V.npy', train_RNN.V)
+		np.save('rnn.W.npy', train_RNN.W) '''
+
+
+

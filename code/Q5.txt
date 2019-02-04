@@ -1,0 +1,49 @@
+### Categories
+Vocab Size:  2000
+Hdims:  25
+The loss is : 5.718092631151223
+['blue', 'red', 'green', 'UNK', 'to']
+(nlu) c096240:code ayushdas$ python rnn.py 
+Retained 2000 words from 9954 (88.35% of all tokens)
+
+Vocab Size:  2000
+Hdims:  25
+The loss is : 5.807239211883488
+['car', 'red', 'green', 'UNK', 'to']
+(nlu) c096240:code ayushdas$ python rnn.py 
+Retained 2000 words from 9954 (88.35% of all tokens)
+
+Vocab Size:  2000
+Hdims:  25
+The loss is : 33.85131222874685
+['car', 'red', 'green', 'UNK', 'to', 'the', 'within', 'UNK', 'needs', 'management']
+(nlu) c096240:code ayushdas$ python rnn.py 
+Retained 2000 words from 9954 (88.35% of all tokens)
+
+Vocab Size:  2000
+Hdims:  25
+The loss is : 31.304051354416927
+['blue', 'red', 'green', 'UNK', 'to', 'the', 'form', 'of', 'there', 'allow']
+(nlu) c096240:code ayushdas$ python rnn.py 
+Retained 2000 words from 9954 (88.35% of all tokens)
+
+
+Vocab Size:  2000
+Hdims:  25
+The loss is : 35.07427405319005
+['management', 'red', 'green', 'UNK', 'to', 'the', 'important', 'of', 'like', 'david']
+(nlu) c096240:code ayushdas$ 
+
+#### Realtions
+Vocab Size:  2000
+Hdims:  25
+The loss is : 6.53391488282551
+['the', 'father', 'and', 'the', 'daughter', '.', '</s>', 'UNK']
+(nlu) c096240:code ayushdas$ python rnn.py 
+Retained 2000 words from 9954 (88.35% of all tokens)
+
+Vocab Size:  2000
+Hdims:  25
+The loss is : 11.695848638803643
+['the', 'father', 'and', 'the', 'son', 'NNP', 'is', '.']
+

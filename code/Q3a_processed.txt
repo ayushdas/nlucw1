@@ -1,0 +1,864 @@
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  0  Number of Hidden Units:  25  Annealing:  0  Epochs:  10
+best observed loss was 0.654103647166744, acc 0.659, at epoch 4
+Accuracy: 0.659
+Unadjusted Loss: 1.923
+Adjusted loss for missing vocab in basic mode: 1.579
+Adjusted loss for missing vocab in non-basic mode: 3.720
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  0  Number of Hidden Units:  25  Annealing:  0  Epochs:  20
+best observed loss was 0.6136129824479329, acc 0.669, at epoch 14
+Accuracy: 0.669
+Unadjusted Loss: 1.847
+Adjusted loss for missing vocab in basic mode: 1.508
+Adjusted loss for missing vocab in non-basic mode: 3.572
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  0  Number of Hidden Units:  50  Annealing:  0  Epochs:  10
+best observed loss was 0.5997964676908843, acc 0.701, at epoch 10
+Accuracy: 0.701
+Unadjusted Loss: 1.822
+Adjusted loss for missing vocab in basic mode: 1.485
+Adjusted loss for missing vocab in non-basic mode: 3.523
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  0  Number of Hidden Units:  50  Annealing:  0  Epochs:  20
+best observed loss was 0.5806485692948078, acc 0.706, at epoch 20
+Accuracy: 0.706
+Unadjusted Loss: 1.787
+Adjusted loss for missing vocab in basic mode: 1.453
+Adjusted loss for missing vocab in non-basic mode: 3.457
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  0  Number of Hidden Units:  75  Annealing:  0  Epochs:  10
+best observed loss was 0.6323733129172064, acc 0.669, at epoch 4
+Accuracy: 0.669
+Unadjusted Loss: 1.882
+Adjusted loss for missing vocab in basic mode: 1.541
+Adjusted loss for missing vocab in non-basic mode: 3.640
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  0  Number of Hidden Units:  75  Annealing:  0  Epochs:  20
+best observed loss was 0.5902856859110277, acc 0.704, at epoch 19
+Accuracy: 0.704
+Unadjusted Loss: 1.805
+Adjusted loss for missing vocab in basic mode: 1.469
+Adjusted loss for missing vocab in non-basic mode: 3.490
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  2  Number of Hidden Units:  25  Annealing:  0  Epochs:  10
+best observed loss was 0.6204416562663492, acc 0.694, at epoch 8
+Accuracy: 0.694
+Unadjusted Loss: 1.860
+Adjusted loss for missing vocab in basic mode: 1.520
+Adjusted loss for missing vocab in non-basic mode: 3.597
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  2  Number of Hidden Units:  25  Annealing:  0  Epochs:  20
+best observed loss was 0.5975477275430786, acc 0.702, at epoch 17
+Accuracy: 0.702
+Unadjusted Loss: 1.818
+Adjusted loss for missing vocab in basic mode: 1.481
+Adjusted loss for missing vocab in non-basic mode: 3.516
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  2  Number of Hidden Units:  50  Annealing:  0  Epochs:  10
+best observed loss was 0.6149323617145429, acc 0.704, at epoch 10
+Accuracy: 0.704
+Unadjusted Loss: 1.850
+Adjusted loss for missing vocab in basic mode: 1.511
+Adjusted loss for missing vocab in non-basic mode: 3.577
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  2  Number of Hidden Units:  50  Annealing:  0  Epochs:  20
+best observed loss was 0.5693958416271679, acc 0.71, at epoch 20
+Accuracy: 0.710
+Unadjusted Loss: 1.767
+Adjusted loss for missing vocab in basic mode: 1.435
+Adjusted loss for missing vocab in non-basic mode: 3.418
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  2  Number of Hidden Units:  75  Annealing:  0  Epochs:  10
+best observed loss was 0.6039903893042305, acc 0.681, at epoch 7
+Accuracy: 0.681
+Unadjusted Loss: 1.829
+Adjusted loss for missing vocab in basic mode: 1.492
+Adjusted loss for missing vocab in non-basic mode: 3.538
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  2  Number of Hidden Units:  75  Annealing:  0  Epochs:  20
+best observed loss was 0.5801342025753311, acc 0.706, at epoch 16
+Accuracy: 0.706
+Unadjusted Loss: 1.786
+Adjusted loss for missing vocab in basic mode: 1.452
+Adjusted loss for missing vocab in non-basic mode: 3.455
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  5  Number of Hidden Units:  25  Annealing:  0  Epochs:  10
+best observed loss was 0.6216458191165528, acc 0.669, at epoch 8
+Accuracy: 0.669
+Unadjusted Loss: 1.862
+Adjusted loss for missing vocab in basic mode: 1.522
+Adjusted loss for missing vocab in non-basic mode: 3.601
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  5  Number of Hidden Units:  25  Annealing:  0  Epochs:  20
+best observed loss was 0.5882292260634568, acc 0.707, at epoch 19
+Accuracy: 0.707
+Unadjusted Loss: 1.801
+Adjusted loss for missing vocab in basic mode: 1.466
+Adjusted loss for missing vocab in non-basic mode: 3.483
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  5  Number of Hidden Units:  50  Annealing:  0  Epochs:  10
+best observed loss was 0.6074186043085005, acc 0.683, at epoch 10
+Accuracy: 0.683
+Unadjusted Loss: 1.836
+Adjusted loss for missing vocab in basic mode: 1.498
+Adjusted loss for missing vocab in non-basic mode: 3.550
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  5  Number of Hidden Units:  50  Annealing:  0  Epochs:  20
+best observed loss was 0.5685369317624775, acc 0.718, at epoch 19
+Accuracy: 0.718
+Unadjusted Loss: 1.766
+Adjusted loss for missing vocab in basic mode: 1.433
+Adjusted loss for missing vocab in non-basic mode: 3.415
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  5  Number of Hidden Units:  75  Annealing:  0  Epochs:  10
+best observed loss was 0.6181792355037347, acc 0.696, at epoch 9
+Accuracy: 0.696
+Unadjusted Loss: 1.856
+Adjusted loss for missing vocab in basic mode: 1.516
+Adjusted loss for missing vocab in non-basic mode: 3.589
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  5  Number of Hidden Units:  75  Annealing:  0  Epochs:  20
+best observed loss was 0.5759001968037759, acc 0.714, at epoch 18
+Accuracy: 0.714
+Unadjusted Loss: 1.779
+Adjusted loss for missing vocab in basic mode: 1.445
+Adjusted loss for missing vocab in non-basic mode: 3.440
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  0  Number of Hidden Units:  25  Annealing:  5  Epochs:  10
+best observed loss was 0.6372572963808221, acc 0.659, at epoch 10
+Accuracy: 0.659
+Unadjusted Loss: 1.891
+Adjusted loss for missing vocab in basic mode: 1.549
+Adjusted loss for missing vocab in non-basic mode: 3.658
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  0  Number of Hidden Units:  25  Annealing:  5  Epochs:  20
+best observed loss was 0.6259569466858181, acc 0.667, at epoch 20
+Accuracy: 0.667
+Unadjusted Loss: 1.870
+Adjusted loss for missing vocab in basic mode: 1.530
+Adjusted loss for missing vocab in non-basic mode: 3.617
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  0  Number of Hidden Units:  50  Annealing:  5  Epochs:  10
+best observed loss was 0.6279150326654506, acc 0.662, at epoch 10
+Accuracy: 0.662
+Unadjusted Loss: 1.874
+Adjusted loss for missing vocab in basic mode: 1.533
+Adjusted loss for missing vocab in non-basic mode: 3.624
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  0  Number of Hidden Units:  50  Annealing:  5  Epochs:  20
+best observed loss was 0.6074988258927521, acc 0.669, at epoch 20
+Accuracy: 0.669
+Unadjusted Loss: 1.836
+Adjusted loss for missing vocab in basic mode: 1.498
+Adjusted loss for missing vocab in non-basic mode: 3.551
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  0  Number of Hidden Units:  75  Annealing:  5  Epochs:  10
+best observed loss was 0.6090846349497241, acc 0.69, at epoch 10
+Accuracy: 0.690
+Unadjusted Loss: 1.839
+Adjusted loss for missing vocab in basic mode: 1.501
+Adjusted loss for missing vocab in non-basic mode: 3.556
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  0  Number of Hidden Units:  75  Annealing:  5  Epochs:  20
+best observed loss was 0.5810998870038491, acc 0.712, at epoch 19
+Accuracy: 0.712
+Unadjusted Loss: 1.788
+Adjusted loss for missing vocab in basic mode: 1.454
+Adjusted loss for missing vocab in non-basic mode: 3.458
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  2  Number of Hidden Units:  25  Annealing:  5  Epochs:  10
+best observed loss was 0.6336151337395827, acc 0.669, at epoch 10
+Accuracy: 0.669
+Unadjusted Loss: 1.884
+Adjusted loss for missing vocab in basic mode: 1.543
+Adjusted loss for missing vocab in non-basic mode: 3.645
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  2  Number of Hidden Units:  25  Annealing:  5  Epochs:  20
+best observed loss was 0.6232810220464241, acc 0.669, at epoch 20
+Accuracy: 0.669
+Unadjusted Loss: 1.865
+Adjusted loss for missing vocab in basic mode: 1.525
+Adjusted loss for missing vocab in non-basic mode: 3.607
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  2  Number of Hidden Units:  50  Annealing:  5  Epochs:  10
+best observed loss was 0.6174563823534486, acc 0.669, at epoch 10
+Accuracy: 0.669
+Unadjusted Loss: 1.854
+Adjusted loss for missing vocab in basic mode: 1.515
+Adjusted loss for missing vocab in non-basic mode: 3.586
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  2  Number of Hidden Units:  50  Annealing:  5  Epochs:  20
+best observed loss was 0.5940933008970893, acc 0.691, at epoch 19
+Accuracy: 0.691
+Unadjusted Loss: 1.811
+Adjusted loss for missing vocab in basic mode: 1.475
+Adjusted loss for missing vocab in non-basic mode: 3.503
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  2  Number of Hidden Units:  75  Annealing:  5  Epochs:  10
+best observed loss was 0.6024875230561474, acc 0.67, at epoch 9
+Accuracy: 0.670
+Unadjusted Loss: 1.827
+Adjusted loss for missing vocab in basic mode: 1.490
+Adjusted loss for missing vocab in non-basic mode: 3.533
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  2  Number of Hidden Units:  75  Annealing:  5  Epochs:  20
+best observed loss was 0.5792023138051785, acc 0.706, at epoch 20
+Accuracy: 0.706
+Unadjusted Loss: 1.785
+Adjusted loss for missing vocab in basic mode: 1.451
+Adjusted loss for missing vocab in non-basic mode: 3.452
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  5  Number of Hidden Units:  25  Annealing:  5  Epochs:  10
+best observed loss was 0.6222405716889398, acc 0.67, at epoch 9
+Accuracy: 0.670
+Unadjusted Loss: 1.863
+Adjusted loss for missing vocab in basic mode: 1.523
+Adjusted loss for missing vocab in non-basic mode: 3.603
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  5  Number of Hidden Units:  25  Annealing:  5  Epochs:  20
+best observed loss was 0.6191980905143137, acc 0.681, at epoch 19
+Accuracy: 0.681
+Unadjusted Loss: 1.857
+Adjusted loss for missing vocab in basic mode: 1.518
+Adjusted loss for missing vocab in non-basic mode: 3.592
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  5  Number of Hidden Units:  50  Annealing:  5  Epochs:  10
+best observed loss was 0.6105360545392445, acc 0.673, at epoch 10
+Accuracy: 0.673
+Unadjusted Loss: 1.841
+Adjusted loss for missing vocab in basic mode: 1.503
+Adjusted loss for missing vocab in non-basic mode: 3.561
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  5  Number of Hidden Units:  50  Annealing:  5  Epochs:  20
+best observed loss was 0.6058511565592438, acc 0.672, at epoch 19
+Accuracy: 0.672
+Unadjusted Loss: 1.833
+Adjusted loss for missing vocab in basic mode: 1.495
+Adjusted loss for missing vocab in non-basic mode: 3.545
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  5  Number of Hidden Units:  75  Annealing:  5  Epochs:  10
+best observed loss was 0.6011062029976395, acc 0.708, at epoch 10
+Accuracy: 0.708
+Unadjusted Loss: 1.824
+Adjusted loss for missing vocab in basic mode: 1.487
+Adjusted loss for missing vocab in non-basic mode: 3.528
+##########
+##########
+Learning Rate:  0.5  Number of Loop Back Steps:  5  Number of Hidden Units:  75  Annealing:  5  Epochs:  20
+best observed loss was 0.593521434778828, acc 0.716, at epoch 19
+Accuracy: 0.716
+Unadjusted Loss: 1.810
+Adjusted loss for missing vocab in basic mode: 1.474
+Adjusted loss for missing vocab in non-basic mode: 3.501
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  0  Number of Hidden Units:  25  Annealing:  0  Epochs:  10
+best observed loss was 0.6647906033383641, acc 0.659, at epoch 10
+Accuracy: 0.659
+Unadjusted Loss: 1.944
+Adjusted loss for missing vocab in basic mode: 1.598
+Adjusted loss for missing vocab in non-basic mode: 3.760
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  0  Number of Hidden Units:  25  Annealing:  0  Epochs:  20
+best observed loss was 0.6428691361459511, acc 0.668, at epoch 20
+Accuracy: 0.668
+Unadjusted Loss: 1.902
+Adjusted loss for missing vocab in basic mode: 1.559
+Adjusted loss for missing vocab in non-basic mode: 3.678
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  0  Number of Hidden Units:  50  Annealing:  0  Epochs:  10
+best observed loss was 0.6436968592472779, acc 0.669, at epoch 10
+Accuracy: 0.669
+Unadjusted Loss: 1.904
+Adjusted loss for missing vocab in basic mode: 1.561
+Adjusted loss for missing vocab in non-basic mode: 3.682
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  0  Number of Hidden Units:  50  Annealing:  0  Epochs:  20
+best observed loss was 0.6212486231979547, acc 0.669, at epoch 20
+Accuracy: 0.669
+Unadjusted Loss: 1.861
+Adjusted loss for missing vocab in basic mode: 1.522
+Adjusted loss for missing vocab in non-basic mode: 3.600
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  0  Number of Hidden Units:  75  Annealing:  0  Epochs:  10
+best observed loss was 0.6321131251152577, acc 0.665, at epoch 10
+Accuracy: 0.665
+Unadjusted Loss: 1.882
+Adjusted loss for missing vocab in basic mode: 1.540
+Adjusted loss for missing vocab in non-basic mode: 3.639
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  0  Number of Hidden Units:  75  Annealing:  0  Epochs:  20
+best observed loss was 0.6055242520229507, acc 0.669, at epoch 20
+Accuracy: 0.669
+Unadjusted Loss: 1.832
+Adjusted loss for missing vocab in basic mode: 1.495
+Adjusted loss for missing vocab in non-basic mode: 3.544
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  2  Number of Hidden Units:  25  Annealing:  0  Epochs:  10
+best observed loss was 0.6798720501689153, acc 0.659, at epoch 10
+Accuracy: 0.659
+Unadjusted Loss: 1.974
+Adjusted loss for missing vocab in basic mode: 1.626
+Adjusted loss for missing vocab in non-basic mode: 3.817
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  2  Number of Hidden Units:  25  Annealing:  0  Epochs:  20
+best observed loss was 0.6452171348368323, acc 0.659, at epoch 20
+Accuracy: 0.659
+Unadjusted Loss: 1.906
+Adjusted loss for missing vocab in basic mode: 1.563
+Adjusted loss for missing vocab in non-basic mode: 3.687
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  2  Number of Hidden Units:  50  Annealing:  0  Epochs:  10
+best observed loss was 0.6348550312535398, acc 0.663, at epoch 10
+Accuracy: 0.663
+Unadjusted Loss: 1.887
+Adjusted loss for missing vocab in basic mode: 1.545
+Adjusted loss for missing vocab in non-basic mode: 3.649
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  2  Number of Hidden Units:  50  Annealing:  0  Epochs:  20
+best observed loss was 0.614598571423876, acc 0.692, at epoch 18
+Accuracy: 0.692
+Unadjusted Loss: 1.849
+Adjusted loss for missing vocab in basic mode: 1.510
+Adjusted loss for missing vocab in non-basic mode: 3.576
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  2  Number of Hidden Units:  75  Annealing:  0  Epochs:  10
+best observed loss was 0.6353648502396402, acc 0.676, at epoch 10
+Accuracy: 0.676
+Unadjusted Loss: 1.888
+Adjusted loss for missing vocab in basic mode: 1.546
+Adjusted loss for missing vocab in non-basic mode: 3.651
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  2  Number of Hidden Units:  75  Annealing:  0  Epochs:  20
+best observed loss was 0.5937655807780272, acc 0.689, at epoch 19
+Accuracy: 0.689
+Unadjusted Loss: 1.811
+Adjusted loss for missing vocab in basic mode: 1.475
+Adjusted loss for missing vocab in non-basic mode: 3.502
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  5  Number of Hidden Units:  25  Annealing:  0  Epochs:  10
+best observed loss was 0.6601474121514066, acc 0.661, at epoch 10
+Accuracy: 0.661
+Unadjusted Loss: 1.935
+Adjusted loss for missing vocab in basic mode: 1.590
+Adjusted loss for missing vocab in non-basic mode: 3.743
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  5  Number of Hidden Units:  25  Annealing:  0  Epochs:  20
+best observed loss was 0.6278678438161371, acc 0.667, at epoch 19
+Accuracy: 0.667
+Unadjusted Loss: 1.874
+Adjusted loss for missing vocab in basic mode: 1.533
+Adjusted loss for missing vocab in non-basic mode: 3.624
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  5  Number of Hidden Units:  50  Annealing:  0  Epochs:  10
+best observed loss was 0.6281796784066137, acc 0.666, at epoch 10
+Accuracy: 0.666
+Unadjusted Loss: 1.874
+Adjusted loss for missing vocab in basic mode: 1.533
+Adjusted loss for missing vocab in non-basic mode: 3.625
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  5  Number of Hidden Units:  50  Annealing:  0  Epochs:  20
+best observed loss was 0.6151961943525553, acc 0.672, at epoch 20
+Accuracy: 0.672
+Unadjusted Loss: 1.850
+Adjusted loss for missing vocab in basic mode: 1.511
+Adjusted loss for missing vocab in non-basic mode: 3.578
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  5  Number of Hidden Units:  75  Annealing:  0  Epochs:  10
+best observed loss was 0.6349950314978029, acc 0.664, at epoch 10
+Accuracy: 0.664
+Unadjusted Loss: 1.887
+Adjusted loss for missing vocab in basic mode: 1.545
+Adjusted loss for missing vocab in non-basic mode: 3.650
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  5  Number of Hidden Units:  75  Annealing:  0  Epochs:  20
+best observed loss was 0.6208660620968476, acc 0.673, at epoch 16
+Accuracy: 0.673
+Unadjusted Loss: 1.861
+Adjusted loss for missing vocab in basic mode: 1.521
+Adjusted loss for missing vocab in non-basic mode: 3.598
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  0  Number of Hidden Units:  25  Annealing:  5  Epochs:  10
+best observed loss was 0.6943285901854419, acc 0.659, at epoch 10
+Accuracy: 0.659
+Unadjusted Loss: 2.002
+Adjusted loss for missing vocab in basic mode: 1.653
+Adjusted loss for missing vocab in non-basic mode: 3.873
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  0  Number of Hidden Units:  25  Annealing:  5  Epochs:  20
+best observed loss was 0.6729550847061613, acc 0.659, at epoch 20
+Accuracy: 0.659
+Unadjusted Loss: 1.960
+Adjusted loss for missing vocab in basic mode: 1.613
+Adjusted loss for missing vocab in non-basic mode: 3.791
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  0  Number of Hidden Units:  50  Annealing:  5  Epochs:  10
+best observed loss was 0.6617901376408415, acc 0.659, at epoch 10
+Accuracy: 0.659
+Unadjusted Loss: 1.938
+Adjusted loss for missing vocab in basic mode: 1.593
+Adjusted loss for missing vocab in non-basic mode: 3.749
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  0  Number of Hidden Units:  50  Annealing:  5  Epochs:  20
+best observed loss was 0.655928713780918, acc 0.659, at epoch 20
+Accuracy: 0.659
+Unadjusted Loss: 1.927
+Adjusted loss for missing vocab in basic mode: 1.582
+Adjusted loss for missing vocab in non-basic mode: 3.727
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  0  Number of Hidden Units:  75  Annealing:  5  Epochs:  10
+best observed loss was 0.658261163628645, acc 0.656, at epoch 10
+Accuracy: 0.656
+Unadjusted Loss: 1.931
+Adjusted loss for missing vocab in basic mode: 1.587
+Adjusted loss for missing vocab in non-basic mode: 3.736
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  0  Number of Hidden Units:  75  Annealing:  5  Epochs:  20
+best observed loss was 0.6262550017565937, acc 0.669, at epoch 19
+Accuracy: 0.669
+Unadjusted Loss: 1.871
+Adjusted loss for missing vocab in basic mode: 1.530
+Adjusted loss for missing vocab in non-basic mode: 3.618
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  2  Number of Hidden Units:  25  Annealing:  5  Epochs:  10
+best observed loss was 0.6937215376853022, acc 0.66, at epoch 10
+Accuracy: 0.660
+Unadjusted Loss: 2.001
+Adjusted loss for missing vocab in basic mode: 1.652
+Adjusted loss for missing vocab in non-basic mode: 3.870
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  2  Number of Hidden Units:  25  Annealing:  5  Epochs:  20
+best observed loss was 0.6607160532629808, acc 0.66, at epoch 20
+Accuracy: 0.660
+Unadjusted Loss: 1.936
+Adjusted loss for missing vocab in basic mode: 1.591
+Adjusted loss for missing vocab in non-basic mode: 3.745
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  2  Number of Hidden Units:  50  Annealing:  5  Epochs:  10
+best observed loss was 0.670396804184711, acc 0.659, at epoch 10
+Accuracy: 0.659
+Unadjusted Loss: 1.955
+Adjusted loss for missing vocab in basic mode: 1.609
+Adjusted loss for missing vocab in non-basic mode: 3.781
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  2  Number of Hidden Units:  50  Annealing:  5  Epochs:  20
+best observed loss was 0.6528561265547544, acc 0.664, at epoch 20
+Accuracy: 0.664
+Unadjusted Loss: 1.921
+Adjusted loss for missing vocab in basic mode: 1.577
+Adjusted loss for missing vocab in non-basic mode: 3.715
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  2  Number of Hidden Units:  75  Annealing:  5  Epochs:  10
+best observed loss was 0.651293165115329, acc 0.664, at epoch 10
+Accuracy: 0.664
+Unadjusted Loss: 1.918
+Adjusted loss for missing vocab in basic mode: 1.574
+Adjusted loss for missing vocab in non-basic mode: 3.710
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  2  Number of Hidden Units:  75  Annealing:  5  Epochs:  20
+best observed loss was 0.6231367137590962, acc 0.661, at epoch 20
+Accuracy: 0.661
+Unadjusted Loss: 1.865
+Adjusted loss for missing vocab in basic mode: 1.525
+Adjusted loss for missing vocab in non-basic mode: 3.607
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  5  Number of Hidden Units:  25  Annealing:  5  Epochs:  10
+best observed loss was 0.6803414085253158, acc 0.669, at epoch 10
+Accuracy: 0.669
+Unadjusted Loss: 1.975
+Adjusted loss for missing vocab in basic mode: 1.627
+Adjusted loss for missing vocab in non-basic mode: 3.819
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  5  Number of Hidden Units:  25  Annealing:  5  Epochs:  20
+best observed loss was 0.6582983995211995, acc 0.662, at epoch 20
+Accuracy: 0.662
+Unadjusted Loss: 1.932
+Adjusted loss for missing vocab in basic mode: 1.587
+Adjusted loss for missing vocab in non-basic mode: 3.736
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  5  Number of Hidden Units:  50  Annealing:  5  Epochs:  10
+best observed loss was 0.6662678420162211, acc 0.659, at epoch 10
+Accuracy: 0.659
+Unadjusted Loss: 1.947
+Adjusted loss for missing vocab in basic mode: 1.601
+Adjusted loss for missing vocab in non-basic mode: 3.766
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  5  Number of Hidden Units:  50  Annealing:  5  Epochs:  20
+best observed loss was 0.6409746412188178, acc 0.661, at epoch 20
+Accuracy: 0.661
+Unadjusted Loss: 1.898
+Adjusted loss for missing vocab in basic mode: 1.556
+Adjusted loss for missing vocab in non-basic mode: 3.672
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  5  Number of Hidden Units:  75  Annealing:  5  Epochs:  10
+best observed loss was 0.6603354717178652, acc 0.662, at epoch 10
+Accuracy: 0.662
+Unadjusted Loss: 1.935
+Adjusted loss for missing vocab in basic mode: 1.590
+Adjusted loss for missing vocab in non-basic mode: 3.743
+##########
+##########
+Learning Rate:  0.1  Number of Loop Back Steps:  5  Number of Hidden Units:  75  Annealing:  5  Epochs:  20
+best observed loss was 0.6477479638448896, acc 0.658, at epoch 20
+Accuracy: 0.658
+Unadjusted Loss: 1.911
+Adjusted loss for missing vocab in basic mode: 1.568
+Adjusted loss for missing vocab in non-basic mode: 3.696
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  0  Number of Hidden Units:  25  Annealing:  0  Epochs:  10
+best observed loss was 0.7183852740909029, acc 0.659, at epoch 10
+Accuracy: 0.659
+Unadjusted Loss: 2.051
+Adjusted loss for missing vocab in basic mode: 1.698
+Adjusted loss for missing vocab in non-basic mode: 3.967
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  0  Number of Hidden Units:  25  Annealing:  0  Epochs:  20
+best observed loss was 0.6609774347461888, acc 0.659, at epoch 20
+Accuracy: 0.659
+Unadjusted Loss: 1.937
+Adjusted loss for missing vocab in basic mode: 1.591
+Adjusted loss for missing vocab in non-basic mode: 3.746
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  0  Number of Hidden Units:  50  Annealing:  0  Epochs:  10
+best observed loss was 0.6852379424337172, acc 0.658, at epoch 9
+Accuracy: 0.658
+Unadjusted Loss: 1.984
+Adjusted loss for missing vocab in basic mode: 1.636
+Adjusted loss for missing vocab in non-basic mode: 3.838
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  0  Number of Hidden Units:  50  Annealing:  0  Epochs:  20
+best observed loss was 0.6566640258787998, acc 0.659, at epoch 18
+Accuracy: 0.659
+Unadjusted Loss: 1.928
+Adjusted loss for missing vocab in basic mode: 1.584
+Adjusted loss for missing vocab in non-basic mode: 3.730
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  0  Number of Hidden Units:  75  Annealing:  0  Epochs:  10
+best observed loss was 0.653606229075828, acc 0.666, at epoch 10
+Accuracy: 0.666
+Unadjusted Loss: 1.922
+Adjusted loss for missing vocab in basic mode: 1.578
+Adjusted loss for missing vocab in non-basic mode: 3.718
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  0  Number of Hidden Units:  75  Annealing:  0  Epochs:  20
+best observed loss was 0.639102033427235, acc 0.659, at epoch 19
+Accuracy: 0.659
+Unadjusted Loss: 1.895
+Adjusted loss for missing vocab in basic mode: 1.553
+Adjusted loss for missing vocab in non-basic mode: 3.665
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  2  Number of Hidden Units:  25  Annealing:  0  Epochs:  10
+best observed loss was 0.6845086157919574, acc 0.666, at epoch 10
+Accuracy: 0.666
+Unadjusted Loss: 1.983
+Adjusted loss for missing vocab in basic mode: 1.634
+Adjusted loss for missing vocab in non-basic mode: 3.835
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  2  Number of Hidden Units:  25  Annealing:  0  Epochs:  20
+best observed loss was 0.658592995794603, acc 0.66, at epoch 20
+Accuracy: 0.660
+Unadjusted Loss: 1.932
+Adjusted loss for missing vocab in basic mode: 1.587
+Adjusted loss for missing vocab in non-basic mode: 3.737
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  2  Number of Hidden Units:  50  Annealing:  0  Epochs:  10
+best observed loss was 0.6589574839497968, acc 0.666, at epoch 10
+Accuracy: 0.666
+Unadjusted Loss: 1.933
+Adjusted loss for missing vocab in basic mode: 1.588
+Adjusted loss for missing vocab in non-basic mode: 3.738
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  2  Number of Hidden Units:  50  Annealing:  0  Epochs:  20
+best observed loss was 0.6293206573446192, acc 0.667, at epoch 20
+Accuracy: 0.667
+Unadjusted Loss: 1.876
+Adjusted loss for missing vocab in basic mode: 1.535
+Adjusted loss for missing vocab in non-basic mode: 3.629
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  2  Number of Hidden Units:  75  Annealing:  0  Epochs:  10
+best observed loss was 0.649985580517054, acc 0.669, at epoch 10
+Accuracy: 0.669
+Unadjusted Loss: 1.916
+Adjusted loss for missing vocab in basic mode: 1.572
+Adjusted loss for missing vocab in non-basic mode: 3.705
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  2  Number of Hidden Units:  75  Annealing:  0  Epochs:  20
+best observed loss was 0.6168459419506295, acc 0.671, at epoch 18
+Accuracy: 0.671
+Unadjusted Loss: 1.853
+Adjusted loss for missing vocab in basic mode: 1.514
+Adjusted loss for missing vocab in non-basic mode: 3.584
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  5  Number of Hidden Units:  25  Annealing:  0  Epochs:  10
+best observed loss was 0.6946278991328909, acc 0.659, at epoch 10
+Accuracy: 0.659
+Unadjusted Loss: 2.003
+Adjusted loss for missing vocab in basic mode: 1.653
+Adjusted loss for missing vocab in non-basic mode: 3.874
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  5  Number of Hidden Units:  25  Annealing:  0  Epochs:  20
+best observed loss was 0.6576587124694946, acc 0.659, at epoch 20
+Accuracy: 0.659
+Unadjusted Loss: 1.930
+Adjusted loss for missing vocab in basic mode: 1.586
+Adjusted loss for missing vocab in non-basic mode: 3.733
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  5  Number of Hidden Units:  50  Annealing:  0  Epochs:  10
+best observed loss was 0.6506036920336893, acc 0.679, at 
+Accuracy: 0.679
+Unadjusted Loss: 1.917
+Adjusted loss for missing vocab in basic mode: 1.573
+Adjusted loss for missing vocab in non-basic mode: 3.707
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  5  Number of Hidden Units:  50  Annealing:  0  Epochs:  20
+best observed loss was 0.6454613501575341, acc 0.659, at epoch 20
+Accuracy: 0.659
+Unadjusted Loss: 1.907
+Adjusted loss for missing vocab in basic mode: 1.564
+Adjusted loss for missing vocab in non-basic mode: 3.688
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  5  Number of Hidden Units:  75  Annealing:  0  Epochs:  10
+best observed loss was 0.6619414057264109, acc 0.662, at epoch 10
+Accuracy: 0.662
+Unadjusted Loss: 1.939
+Adjusted loss for missing vocab in basic mode: 1.593
+Adjusted loss for missing vocab in non-basic mode: 3.749
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  5  Number of Hidden Units:  75  Annealing:  0  Epochs:  20
+best observed loss was 0.6314196895345061, acc 0.667, at epoch 19
+Accuracy: 0.667
+Unadjusted Loss: 1.880
+Adjusted loss for missing vocab in basic mode: 1.539
+Adjusted loss for missing vocab in non-basic mode: 3.637
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  0  Number of Hidden Units:  25  Annealing:  5  Epochs:  10
+best observed loss was 0.9205897667374567, acc 0.659, at epoch 10
+Accuracy: 0.659
+Unadjusted Loss: 2.511
+Adjusted loss for missing vocab in basic mode: 2.135
+Adjusted loss for missing vocab in non-basic mode: 4.856
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  0  Number of Hidden Units:  25  Annealing:  5  Epochs:  20
+best observed loss was 0.7199712320866397, acc 0.66, at epoch 20
+Accuracy: 0.660
+Unadjusted Loss: 2.054
+Adjusted loss for missing vocab in basic mode: 1.701
+Adjusted loss for missing vocab in non-basic mode: 3.973
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  0  Number of Hidden Units:  50  Annealing:  5  Epochs:  10
+best observed loss was 0.7006461661655272, acc 0.659, at epoch 10
+Accuracy: 0.659
+Unadjusted Loss: 2.015
+Adjusted loss for missing vocab in basic mode: 1.665
+Adjusted loss for missing vocab in non-basic mode: 3.897
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  0  Number of Hidden Units:  50  Annealing:  5  Epochs:  20
+best observed loss was 0.6889388412302413, acc 0.659, at epoch 20
+Accuracy: 0.659
+Unadjusted Loss: 1.992
+Adjusted loss for missing vocab in basic mode: 1.643
+Adjusted loss for missing vocab in non-basic mode: 3.852
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  0  Number of Hidden Units:  75  Annealing:  5  Epochs:  10
+best observed loss was 0.669820171928123, acc 0.669, at epoch 10
+Accuracy: 0.669
+Unadjusted Loss: 1.954
+Adjusted loss for missing vocab in basic mode: 1.607
+Adjusted loss for missing vocab in non-basic mode: 3.779
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  0  Number of Hidden Units:  75  Annealing:  5  Epochs:  20
+best observed loss was 0.6820718225142518, acc 0.658, at epoch 20
+Accuracy: 0.658
+Unadjusted Loss: 1.978
+Adjusted loss for missing vocab in basic mode: 1.630
+Adjusted loss for missing vocab in non-basic mode: 3.826
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  2  Number of Hidden Units:  25  Annealing:  5  Epochs:  10
+best observed loss was 0.8461590961441205, acc 0.659, at epoch 10
+Accuracy: 0.659
+Unadjusted Loss: 2.331
+Adjusted loss for missing vocab in basic mode: 1.963
+Adjusted loss for missing vocab in non-basic mode: 4.508
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  2  Number of Hidden Units:  25  Annealing:  5  Epochs:  20
+best observed loss was 0.7183001561464114, acc 0.659, at epoch 20
+Accuracy: 0.659
+Unadjusted Loss: 2.051
+Adjusted loss for missing vocab in basic mode: 1.698
+Adjusted loss for missing vocab in non-basic mode: 3.967
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  2  Number of Hidden Units:  50  Annealing:  5  Epochs:  10
+best observed loss was 0.7071016313419284, acc 0.659, at epoch 10
+Accuracy: 0.659
+Unadjusted Loss: 2.028
+Adjusted loss for missing vocab in basic mode: 1.677
+Adjusted loss for missing vocab in non-basic mode: 3.923
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  2  Number of Hidden Units:  50  Annealing:  5  Epochs:  20
+best observed loss was 0.6563942133678369, acc 0.659, at epoch 20
+Accuracy: 0.659
+Unadjusted Loss: 1.928
+Adjusted loss for missing vocab in basic mode: 1.583
+Adjusted loss for missing vocab in non-basic mode: 3.729
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  2  Number of Hidden Units:  75  Annealing:  5  Epochs:  10
+best observed loss was 0.7089499784474627, acc 0.659, at epoch 10
+Accuracy: 0.659
+Unadjusted Loss: 2.032
+Adjusted loss for missing vocab in basic mode: 1.680
+Adjusted loss for missing vocab in non-basic mode: 3.930
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  2  Number of Hidden Units:  75  Annealing:  5  Epochs:  20
+best observed loss was 0.6596406272200004, acc 0.66, at epoch 20
+Accuracy: 0.660
+Unadjusted Loss: 1.934
+Adjusted loss for missing vocab in basic mode: 1.589
+Adjusted loss for missing vocab in non-basic mode: 3.741
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  5  Number of Hidden Units:  25  Annealing:  5  Epochs:  10
+best observed loss was 1.0535670001378201, acc 0.659, at epoch 10
+Accuracy: 0.659
+Unadjusted Loss: 2.868
+Adjusted loss for missing vocab in basic mode: 2.482
+Adjusted loss for missing vocab in non-basic mode: 5.547
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  5  Number of Hidden Units:  25  Annealing:  5  Epochs:  20
+best observed loss was 0.73310942480261, acc 0.659, at epoch 20
+Accuracy: 0.659
+Unadjusted Loss: 2.082
+Adjusted loss for missing vocab in basic mode: 1.727
+Adjusted loss for missing vocab in non-basic mode: 4.026
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  5  Number of Hidden Units:  50  Annealing:  5  Epochs:  10
+best observed loss was 0.7030742831918133, acc 0.659, at epoch 10
+Accuracy: 0.659
+Unadjusted Loss: 2.020
+Adjusted loss for missing vocab in basic mode: 1.669
+Adjusted loss for missing vocab in non-basic mode: 3.907
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  5  Number of Hidden Units:  50  Annealing:  5  Epochs:  20
+best observed loss was 0.6610289737655407, acc 0.666, at epoch 20
+Accuracy: 0.666
+Unadjusted Loss: 1.937
+Adjusted loss for missing vocab in basic mode: 1.592
+Adjusted loss for missing vocab in non-basic mode: 3.746
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  5  Number of Hidden Units:  75  Annealing:  5  Epochs:  10
+best observed loss was 0.7099391269869266, acc 0.659, at epoch 10
+Accuracy: 0.659
+Unadjusted Loss: 2.034
+Adjusted loss for missing vocab in basic mode: 1.682
+Adjusted loss for missing vocab in non-basic mode: 3.934
+##########
+##########
+Learning Rate:  0.05  Number of Loop Back Steps:  5  Number of Hidden Units:  75  Annealing:  5  Epochs:  20
+best observed loss was 0.6606455548581442, acc 0.661, at epoch 19
+Accuracy: 0.661
+Unadjusted Loss: 1.936
+Adjusted loss for missing vocab in basic mode: 1.591
+Adjusted loss for missing vocab in non-basic mode: 3.744
+##########
